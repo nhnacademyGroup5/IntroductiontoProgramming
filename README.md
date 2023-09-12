@@ -12,7 +12,7 @@
 
 ## 2️⃣ 일정
 1. Introduction to Programming(9.13 ~ 9.27)
-  - 하루 1챕터
-  - 오전(챕터 공부 및 연습문제 풀기), 오후(연습문제 리뷰)
+      - 하루 1챕터
+      - 오전(챕터 공부 및 연습문제 풀기), 오후(연습문제 리뷰)
 2. Introduction to Programming Using Java
-  - 
+      - 
