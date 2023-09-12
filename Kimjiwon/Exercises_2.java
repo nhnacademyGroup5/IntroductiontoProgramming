@@ -1,4 +1,4 @@
-package Unit2;
+package Kimjiwon;
 
 public class Exercises_2 {
 
