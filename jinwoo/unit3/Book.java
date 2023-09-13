@@ -1,4 +1,4 @@
-package jinwoo;
+package jinwoo.unit3;
 public class Book {
     private String title;
     private String authors;

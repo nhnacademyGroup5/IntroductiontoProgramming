@@ -1,4 +1,4 @@
-package jinwoo;
+package jinwoo.unit3;
 
 // Ex 3.7.
 public class Novel extends Book{

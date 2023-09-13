@@ -1,4 +1,4 @@
-package jinwoo;
+package jinwoo.unit2;
 
 // Exercise 2.1. Write a Java program that creates an object of type String representing your name, and prints the first and the last characters of the string.
 // Exercise 2.1. Write a Java program that creates an object of type String representing your name, and prints the first and the last characters of the string.
@@ -19,6 +19,6 @@ class Ex_2{
         s.replace(0,3,lastName).replace(6, s.length(), firstName);
         
         System.out.println(s);
-
+        
     }
 } 

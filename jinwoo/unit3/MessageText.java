@@ -1,4 +1,4 @@
-package jinwoo;
+package jinwoo.unit3;
 // Exercise 3.3. We want to realize a system for composing messages to send via a cell phone. Each message corresponds to a code. For example, to the code "ily" corresponds the complete message "I love you, darling.". Define the class MessageText to handle messages. The class must have:
 
 public class MessageText {

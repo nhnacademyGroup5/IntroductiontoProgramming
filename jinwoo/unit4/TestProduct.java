@@ -1,4 +1,6 @@
-package jinwoo;
+package jinwoo.unit4;
+
+import jinwoo.unit3.Product;
 
 public class TestProduct {
     public static void main (String[] args) {

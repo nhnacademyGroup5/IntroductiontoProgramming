@@ -1,4 +1,4 @@
-package jinwoo;
+package jinwoo.unit3;
 
 // Ex 3.4.
 public class Message {
