@@ -17,6 +17,7 @@ class Ex_2{
         s.append(firstName).append(lastName);
         System.out.println(s);
         s.replace(0,3,lastName).replace(6, s.length(), firstName);
+        
         System.out.println(s);
 
     }
