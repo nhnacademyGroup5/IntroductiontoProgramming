@@ -28,13 +28,10 @@ public class Exercise2 {
         }
 
         if(count == 0) {
-            // System.out.println("irregular");
             str = "irregular";
         } else if(count == 1) {
-            // System.out.println("symmetric");
             str = "symmetric";
         } else {
-            // System.out.println("regular");
             str = "regular";
         }
 
