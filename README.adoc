@@ -5,10 +5,10 @@
 
    
 == 1️⃣ 조원
-1. 지영훈
-2. 이진우
-3. 김지원
-4. 김태수
+1. 지영훈 : https://github.com/nhnacademyGroup5/IntroductiontoProgramming/tree/develop/jiyh
+2. 이진우 : https://github.com/nhnacademyGroup5/IntroductiontoProgramming/tree/develop/jinwoo
+3. 김지원 : https://github.com/nhnacademyGroup5/IntroductiontoProgramming/tree/develop/jiwon
+4. 김태수 : https://github.com/nhnacademyGroup5/IntroductiontoProgramming/tree/develop/KimTaeSu
 
 == 2️⃣ 일정 (v.0.0.2)
 1. Introduction to Programming(9.13 ~ 9.17) https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/
