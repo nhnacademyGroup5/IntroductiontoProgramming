@@ -1,4 +1,4 @@
-package jinwoo.unti7;
+package jinwoo.unit7;
 
 public class ApartmentTest {
     public static void main(String[] args) {

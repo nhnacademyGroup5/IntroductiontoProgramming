@@ -1,4 +1,4 @@
-package jinwoo.unti7;
+package jinwoo.unit7;
 
 // Ex 7.12.
 public class Apartment {

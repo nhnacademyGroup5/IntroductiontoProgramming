@@ -1,4 +1,4 @@
-package jinwoo.unti7;
+package jinwoo.unit7;
 
 import java.util.ArrayList;
 import java.util.Arrays;
