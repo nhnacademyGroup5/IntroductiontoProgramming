@@ -76,8 +76,6 @@ public class al0914 {
 
     public static void main(String[] args) {
         System.out.println(solution("1.234512"));
-        System.out.println(new BigDecimal("-0.25").indexOf("."));
-        
     }
 
 }
