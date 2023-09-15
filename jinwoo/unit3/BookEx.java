@@ -1,4 +1,4 @@
-package jinwoo;
+package jinwoo.unit3;
 
 public class BookEx {
 
