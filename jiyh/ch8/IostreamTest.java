@@ -1,6 +1,8 @@
 package ch8;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class IostreamTest {
@@ -11,7 +13,7 @@ public class IostreamTest {
         // Iostream.saveString(System.out, loadString);
 
         // 3
-        // System.out.println(Iostream.readAverage(System.in));
+        System.out.println(Iostream.readAverage(System.in));
 
         // FileWriter f = new FileWriter("score.txt");
         // PrintWriter r = new PrintWriter(f);
@@ -20,6 +22,7 @@ public class IostreamTest {
         // r.print("Verdi 30 24 30 27\n");
         // f.close();
         // r.close();
+
         
         // 3
         Iostream.checkFirstChar(new FileInputStream("test1.txt"));
@@ -28,6 +31,7 @@ public class IostreamTest {
         // 5
         System.out.println(Iostream.maxAvgscore("score.txt"));
 
+        
         
     }
 }

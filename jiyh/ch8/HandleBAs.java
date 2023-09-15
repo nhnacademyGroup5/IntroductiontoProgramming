@@ -1,29 +1,16 @@
 package ch8;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class HandleBAs {
-    private String name;
-    private String subName;
-    private double balance;
+    private IOFile file = null;
 
-    public HandleBAs(String name, String subName, double balance) {
-        this.name = name;
-        this.subName = subName;
-        this.balance = balance;
+    HandleBAs(String filename) throws IOException{
+        file = new IOFile(filename);
     }
 
-    // filename : bankStorage
-    public void HandleBAs(String filename) throws IOException{
-        FileWriter fw = new FileWriter(new File(filename), true);
-
-        fw.write(name + " " + subName + " " + balance +"\n");
-        fw.flush();
-        fw.close();
+    public void interests(double rate){
+        
     }
 
 
