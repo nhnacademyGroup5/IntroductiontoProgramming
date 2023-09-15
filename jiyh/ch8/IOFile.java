@@ -19,18 +19,39 @@ public class IOFile {
         return countLine;
     }
 
-    public void write(OutputStream os){
+    public void write(OutputStream os) throws IOException{
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os));
+        
+        for(int i=0; i<countLines(); i++){
+            bw.write(br.readLine());
+        }
+
+        bw.flush();
+        bw.close();
         
     }
 
     public void print() throws IOException{
         BufferedReader br = new BufferedReader(new FileReader(filename));
 
-        String strLine = br.readLine();
-        while(strLine != null){
-            System.out.println(strLine);
-            strLine = br.readLine();
+        for(int i=0; i<countLines(); i++){
+            System.out.println(br.readLine());
         }
+    }
+
+    public void copy(String filename) throws IOException{
+        BufferedReader br = new BufferedReader(new FileReader(this.filename));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(filename));
+
+        String bufString = br.readLine();
+        while(bufString != null){
+            bw.write(bufString);
+            bufString = br.readLine();
+        }
+        bw.flush();
+        bw.close();
+        
     }
 
     public void delete(){
