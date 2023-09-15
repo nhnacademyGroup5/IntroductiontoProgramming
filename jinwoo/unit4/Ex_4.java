@@ -1,4 +1,4 @@
-package jinwoo;
+package jinwoo.unit4;
 
 public class Ex_4 {
 

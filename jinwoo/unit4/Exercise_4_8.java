@@ -1,4 +1,4 @@
-package jinwoo;
+package jinwoo.unit4;
 // Ex 4.8.
 
 class Account {
