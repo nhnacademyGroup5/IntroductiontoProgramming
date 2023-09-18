@@ -26,7 +26,7 @@ public class al0913 {
         }
         return gcd(b, result);
     }
-    // 6 84
+    
     private static int solution(int x, int y) {
         return x * y / gcd(x,y);
     }
