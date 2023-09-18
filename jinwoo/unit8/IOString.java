@@ -45,14 +45,15 @@ public class IOString {
 
     // Ex 8.3.
     private static void printFile(String fileName) throws IOException{
-        OutputStream os = System.out;
-        File file = new File(fileName);
-        FileReader fileReader = new FileReader(file);
+        // String path = IOString.class.getResource("").getPath() + "resources/" + fileName;
+        String path = "jinwoo/unit8/resources/" + fileName;
+        FileReader fileReader = new FileReader(path);
         BufferedReader br = new BufferedReader(fileReader);
-        PrintStream ps = new PrintStream(os);
         String line = br.readLine();
         while(line != null){
-            ps.println(line);
+            if(line.startsWith("/") || line.startsWith(";") || line.startsWith("%")){
+                System.out.println(line);
+            }
             line = br.readLine();
         }
         br.close();
@@ -60,8 +61,7 @@ public class IOString {
 
     // Ex 8.4.
     private static void makeMultiplicationTable(String fileName, int n) throws IOException{
-        File file = new File(fileName);
-        FileWriter fw = new FileWriter(file);
+        FileWriter fw = new FileWriter(fileName);
         BufferedWriter bw = new BufferedWriter(fw);
         for (int i = 1; i <= n; i++) {
             StringBuilder sb = new StringBuilder();
@@ -103,14 +103,39 @@ public class IOString {
         return "Best is : " + name + "[" + average + "]";
     }
 
+    public static Matrix readFileToMatrix(String filename) throws IOException{
+        IOFile file = new IOFile(filename);
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file.getFileName()));
+        String line = bufferedReader.readLine();
+        StringTokenizer stringTokenizer = new StringTokenizer(line);
+        int row = file.countLines();
+        int column = stringTokenizer.countTokens();
+        Matrix result = new Matrix(row, column);
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                result.getInfo()[i][j] = Integer.parseInt(stringTokenizer.nextToken());
+            }
+            line = bufferedReader.readLine();
+        }
+        bufferedReader.close();
+        return result;
+    }
+
     public static void main(String[] args) throws IOException{
         // InputStream is = System.in;
         // OutputStream os = System.out;
         // printArray(os, loadArray(is, 4));
         // System.out.println(inputAvarage(is));
-        // printFile(os, "jinwoo/unit8/resources/Ex8_3.txt");
+        // printFile("Ex8_3.txt");
         // makeMultiplicationTable("jinwoo/unit8/resources/Ex8_4.txt", 3);
-        String answer = getHighestAverage("jinwoo/unit8/resources/Ex8_5.txt");
-        System.out.println(answer);
+        // String answer = getHighestAverage("jinwoo/unit8/resources/Ex8_5.txt");
+        // System.out.println(answer);
+        // Matrix matrix = new Matrix(3, 3);
+        // matrix.save("matrix");
+        // IOFile file = new IOFile("Ex8_3");
+        // file.print();
+        // System.out.println(file.countLines());
+        System.out.println(readFileToMatrix("matrix"));
+
     }
 }

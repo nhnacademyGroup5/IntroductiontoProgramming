@@ -1,4 +1,4 @@
-package jinwoo.unit8;
+package groupSolution.ch8;
 
 import java.io.*;
 import java.util.StringTokenizer;
