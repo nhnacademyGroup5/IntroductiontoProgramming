@@ -4,7 +4,7 @@ public class Exercise6 {
 
     public static void main(String[] args) {
         
-        String str = "asccccccssawcxcccc";
+        String str = "asccccccssawcxcc";
 
         maximumCount(str, 'c', 0);
         System.out.println(maxlen);
