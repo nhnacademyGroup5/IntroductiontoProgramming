@@ -227,7 +227,7 @@ class Message {
 
     @Override
     public String toString() {
-        return this.messageText.toString() + "NumberToCall : " + getNumberToCall() + "\n" + "NumberOfSender : "
+        return this.messageText + "NumberToCall : " + getNumberToCall() + "\n" + "NumberOfSender : "
                 + getNumberOfSender() + "\n";
 
     }//-----------------------------------------------------------------
