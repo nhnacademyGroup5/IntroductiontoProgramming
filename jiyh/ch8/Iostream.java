@@ -3,6 +3,7 @@ package ch8;
 import java.io.*;
 import java.util.StringTokenizer;
 
+
 public class Iostream {
 
     static String[] loadStrings(InputStream in, int n) throws IOException{

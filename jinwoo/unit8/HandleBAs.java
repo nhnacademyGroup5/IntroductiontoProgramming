@@ -1,39 +1,50 @@
 package jinwoo.unit8;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.StringTokenizer;
 
-// Ex 8.7. (같이 해봐요)
 public class HandleBAs {
-    private String name;
-    private String surname;
-    private int balance;
+    private String filename;
 
-    public HandleBAs(String name, String surname, int balance) {
-        this.name = name;
-        this.surname = surname;
-        this.balance = balance;
+    public HandleBAs(String filename) throws IOException{
+        String path = "groupSolution/ch8/" + filename + ".txt";
+        this.filename = path;
     }
 
-    private void handleBAs(String filename) throws IOException{
-        File file = new File("jinwoo/unit8/resources/" + filename + ".txt");
-        FileOutputStream fileOutputStream = new FileOutputStream(file);
-        FileWriter fileWriter = new FileWriter(file);
-        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        bufferedWriter.write(this.toString() + "\n");
-        bufferedWriter.close();
-        fileOutputStream.close();
+    public Bank setBank() throws IOException{
+        Bank newBank = new Bank();
+        FileReader fileReader = new FileReader(new File(this.filename));
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        bufferedReader.readLine();
+        String line = bufferedReader.readLine();
+        while(line != null){
+            StringTokenizer stringTokenizer = new StringTokenizer(line);
+            String name = stringTokenizer.nextToken();
+            String surname = stringTokenizer.nextToken();
+            double balance = Double.valueOf(stringTokenizer.nextToken());
+            Account account = new Account(surname, name, balance);
+            newBank.add(account);
+            line = bufferedReader.readLine();
+        }
+        bufferedReader.close();
+
+        return newBank;
     }
 
-    public void interests(double rate){
-
+    public void interests(double rate) throws IOException{
+        Bank bank = setBank();
+        for (Account account : bank.getAccounts()) {
+            account.setBalance(rate * account.getBalance());
+        }
+        bank.stored(filename);
     }
 
-    @Override
-    public String toString() {
-        return "[name=" + name + ", surname=" + surname + ", balance=" + balance + "]";
+    public void printNegative() throws IOException{
+        Bank bank = setBank();
+        for (Account account : bank.getAccounts()) {
+            if(account.getBalance() < 0 ){
+                System.out.println(account);
+            }
+        }
     }
 }
