@@ -2,6 +2,7 @@ package ch8;
 
 import java.io.*;
 
+
 public class IOFile {
     private String filename;
     
@@ -22,7 +23,7 @@ public class IOFile {
     public void write(OutputStream os) throws IOException{
         BufferedReader br = new BufferedReader(new FileReader(filename));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os));
-        
+    
         for(int i=0; i<countLines(); i++){
             bw.write(br.readLine());
         }
