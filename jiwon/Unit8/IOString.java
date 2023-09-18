@@ -15,7 +15,7 @@ public class IOString {
         String[] a = new String[n];
         for (int i = 0; i < n; i++) {
             String line = br.readLine();
-            a[i] = line;
+            a[i] = line;  //한줄로 줄이기
         }
         return a;
 

@@ -11,7 +11,7 @@ public class Exercise8_3 {
         String line;
 
         char[] prefixes = {'/', ';', '%'};
-
+//codepointat
         while ((line = in.readLine()) != null) {
             for (char pre : prefixes) {
                 if (line.startsWith(String.valueOf(pre))) {

@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Exercise8_4 {
     public static void main(String[] args) throws IOException {
-        FileWriter f = new FileWriter("test.txt");
+        FileWriter f = new FileWriter("test.txt"); //Stringbuilder ->로 수정
         PrintWriter out = new PrintWriter(f);
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -18,13 +18,15 @@ public class Exercise8_4 {
                 out.print(product);
 
 
-                if (j < n) {
-                    out.print(" ");
-                }
+                out.print(" ");
+                //if 구문 삭제
             }
 
             out.println();
         }
 
+// stringbuilder ->
+        out.flush();
+        out.close();
     }
 }
