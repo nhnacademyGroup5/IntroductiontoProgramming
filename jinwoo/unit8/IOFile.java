@@ -17,7 +17,6 @@ public class IOFile {
     public int countLines() throws IOException{
         int count = 0;
         BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
-        // String line = bufferedReader.readLine();
         while(bufferedReader.readLine() != null){
             count++;
         }

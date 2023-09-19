@@ -135,7 +135,9 @@ public class IOString {
         // IOFile file = new IOFile("Ex8_3");
         // file.print();
         // System.out.println(file.countLines());
-        System.out.println(readFileToMatrix("matrix"));
+        // System.out.println(readFileToMatrix("matrix"));
+        IOFile file = new IOFile("Ex8_3");
+        System.out.println(file.countLines());
 
     }
 }

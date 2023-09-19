@@ -21,7 +21,7 @@ public class HandleBAs {
             StringTokenizer stringTokenizer = new StringTokenizer(line);
             String name = stringTokenizer.nextToken();
             String surname = stringTokenizer.nextToken();
-            double balance = Double.valueOf(stringTokenizer.nextToken());
+            double balance = Double.parseDouble(stringTokenizer.nextToken());
             Account account = new Account(surname, name, balance);
             newBank.add(account);
             line = bufferedReader.readLine();
