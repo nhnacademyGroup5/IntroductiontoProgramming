@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Exercise6 {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args){
         try(
             BufferedReader br = new BufferedReader(new FileReader("jinwoo/unit9/Example.txt"));    
         ) {
@@ -24,6 +24,5 @@ public class Exercise6 {
         } catch (ExceptionLineTooLong e){
             System.out.println(e.getMessage());
         }
-        
     }
 }
