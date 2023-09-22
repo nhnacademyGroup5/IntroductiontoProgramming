@@ -8,8 +8,35 @@ class ListNode {
 
 public class Exercise11_1 {
     public static void main(String[] args) {
+
         ListNode a = create();
+
         System.out.println(length(a));
+
+        insertAfter(a, "X", "B");
+        System.out.println("insert after : ");
+        printList(a);
+
+        insertBefore(a, "Y", "B");
+        System.out.println("insert before :");
+        printList(a);
+
+        modify(a, "C", "Y");
+        System.out.println("modify :");
+        printList(a);
+
+        modifyAll(a, "Y", "W");
+        System.out.println("modify all :");
+        printList(a);
+
+        ListNode copyList = copy(a);
+        System.out.println("Copy of the Original List:");
+        printList(copyList);
+
+        ListNode invertedList = invert(a);
+        System.out.println("Inverted List:");
+        printList(invertedList);
+
 
     }
 
