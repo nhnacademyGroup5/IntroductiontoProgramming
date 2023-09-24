@@ -1,4 +1,4 @@
-package jinwoo.assignment.maxGCD;
+package jinwoo.assignment.max_gcd;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -14,10 +14,7 @@ public class Test {
                 arr[index] = Integer.parseInt(st.nextToken());
                 index++;
             }
-            int[][] result = MaxGCD.combination(arr);
-            for (int i = 0; i < result.length; i++) {
-                System.out.println(result[i][0] + " " + result[i][1]);
-            }
+            System.out.println(GCD.maxGCD(arr));
         } catch (Exception e) {
             e.getStackTrace();
         }

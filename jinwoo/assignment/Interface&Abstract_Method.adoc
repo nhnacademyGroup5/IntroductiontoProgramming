@@ -1,4 +1,10 @@
 = Interface vs Abstract Method
 
+Interface
+1. IS - A
+2. 상속 관계에 얽매이지 않고, interface에 구현된 method를 overriding하여 여러 형태로 구현할 수 있다.
+3. interface에 구현된 method를 구현하게끔 강제한다.
 
+Abstract Class
+1. Has - A
 

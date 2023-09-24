@@ -1,7 +1,8 @@
-package jinwoo.assignment.maxGCD;
+package jinwoo.assignment.max_gcd;
 
-public class MaxGCD {
-    private MaxGCD() {}
+abstract class MathOperation{
+    protected MathOperation() {}
+
     public static int[][] combination(int[] numbers){
         try {
             int arrLength = numbers.length;
@@ -21,7 +22,23 @@ public class MaxGCD {
             }
             return result;
         } catch (IllegalArgumentException | OutOfMemoryError e) {
-            e.getMessage();
+            int[][] result = new int[][]{};
+            System.out.println(e.getMessage());
+            return result;
+        }
+    }
+
+    protected static <T> T reduce(BinaryOperation<T> binaryOperation, T[] arr){
+        try {
+            if(arr.length < 2) throw new IllegalArgumentException("MathOperation.reduce : Required at least two values.");
+            T result = arr[0];
+            for (int i = 0; i < arr.length; i++) {
+                result = binaryOperation.calculate(result, arr[i]);
+            }
+
+            return result;
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
             return null;
         }
     }
