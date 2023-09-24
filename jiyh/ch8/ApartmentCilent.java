@@ -14,9 +14,9 @@ public class ApartmentCilent {
         apart.addLiving("4");
 
         // 삭제후 제위치에 정렬 되었는지 확인
-        System.out.println(apart.isempty(4));
+        System.out.println(apart.get(4));
         apart.delete(3);
-        System.out.println(apart.isempty(3));
+        System.out.println(apart.get(3));
 
         System.out.println("------- read file ---------");
         apart.saveToFile("apart.txt");

@@ -1,5 +1,7 @@
 package ch5;
 
+import java.time.LocalDate;
+
 public class DateTest {
 
     public static void main(String[] args) {
@@ -9,9 +11,7 @@ public class DateTest {
         Date date3 = new Date(2000, 2, 28);
 
         // getter(day, month, year)
-        System.out.println(date1.getDay());
-        System.out.println(date1.getMonth());
-        System.out.println(date1.getYear());
+        System.out.println(date1);
 
         // Date equals
         System.out.println(date1.equals(date2));
@@ -23,7 +23,18 @@ public class DateTest {
         // nextday
         date3.nextday();   
         date3.nextday();   
-        System.out.println(date3.getDate());    
+        System.out.println(date3.getDate());   
+        
+        LocalDate now = LocalDate.now();
+        LocalDate birth = LocalDate.of(2019, 2, 11);
+
+
+        // comment
+        System.out.println(now);
+        System.out.println(now.isAfter(birth));
+        System.out.println(now.equals(birth));
+        System.out.println(now.plusDays(1));
+
     }
     
 }
