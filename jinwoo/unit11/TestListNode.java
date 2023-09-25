@@ -7,7 +7,9 @@ public class TestListNode {
         a.insertBefore("d", "b");
         a.insertBefore("d", "c");
         System.out.println(a);
+        System.out.println(a.length());
         a.invert();
         System.out.println(a);
+        System.out.println(a.length());
     }
 }
