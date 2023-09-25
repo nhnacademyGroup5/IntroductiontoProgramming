@@ -3,7 +3,7 @@ package jinwoo.assignment.search_word;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Test { 
+public class Test {
     public static void main(String[] args) {
         try {
             Dictionary dict = new Dictionary("words");
