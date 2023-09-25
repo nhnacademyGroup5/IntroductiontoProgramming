@@ -19,7 +19,7 @@ public class Dictionary {
                 String setLine = line.replaceAll("\\s+", " ");
                 String name = convertRedex(line, "[a-zA-Z]+\\s?[a-zA-Z]+");
                 int index = setLine.indexOf(name) + name.length();
-                String means = setLine.substring(index + 1).replaceAll("\\s?\\d+&", "");
+                String means = filterMeans(setLine.substring(index + 1));
                 dict.put(name, means);
                 line = br.readLine();
             }
@@ -35,9 +35,18 @@ public class Dictionary {
         throw new IllegalStateException("찾는 문자열이 없습니다.");
     }
 
-    // public String filterMeans(String input){
-    //     input.split(",")
-    // }
+    public String filterMeans(String input){
+        String[] arr = input.split(",");
+        StringBuilder sb = new StringBuilder();
+        Pattern pattern = Pattern.compile("\\s*\\d+\\s*");
+        for (String str : arr) {
+            Matcher matcher = pattern.matcher(str);
+            if(matcher.matches()) continue;
+            sb.append(str.trim()).append(", ");
+        }
+        sb.delete(sb.length()-2, sb.length()-1);
+        return sb.toString();
+    }
 
     public void search(String name){
         try {
@@ -54,9 +63,4 @@ public class Dictionary {
             System.out.println(e.getMessage());
         }
     }
-
-    // public void sort(){
-    //     List<String> key = new ArrayList<>(dict.keySet());
-    //     key.sort((a, b) -> a.compareTo(b));
-    // }
 }
