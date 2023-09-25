@@ -1,4 +1,4 @@
-package homework.service;
+package bank;
 
 public class Employee{
     private String name;

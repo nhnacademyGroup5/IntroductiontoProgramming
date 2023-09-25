@@ -1,4 +1,4 @@
-package homework.service;
+package bank;
 
 import java.time.LocalTime;
 

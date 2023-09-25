@@ -1,4 +1,4 @@
-package homework.service;
+package bank;
 
 import java.time.LocalTime;
 
@@ -26,9 +26,9 @@ public class Counter {
 
             
             Thread.sleep(processTime * 1000);
-            System.out.println("-----------------------------");
+            System.out.println("---------------------------------------------");
             System.out.println("창구 직원이 처리한 시간 : "+LocalTime.now());
-            System.out.println("ticket(번호, 받은시간)" + cus.getTicket());
+            System.out.println("ticket(번호, 받은시간) " + cus.getTicket());
 
         } catch (InterruptedException e) {
             e.getStackTrace();
