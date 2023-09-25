@@ -34,6 +34,10 @@ public class Date {
         return this.date;
     }
 
+    public String toString(){
+        return this.year+"-"+this.month+"-"+this.day;
+    }
+
     public boolean equals(Date d){
         return this.date.equals(d.date);
     }

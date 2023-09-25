@@ -73,7 +73,6 @@ public class StringList {
     }
 
     public static Node copy(Node node){
-
         Node copy = null;
 
         int len = StringList.length(node);
@@ -124,7 +123,6 @@ public class StringList {
             sb.append(node.info);
             node = node.next;
         }
-
         return sb.toString();
     }
 

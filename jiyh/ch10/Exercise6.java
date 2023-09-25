@@ -1,29 +1,19 @@
 public class Exercise6 {
 
-    private static int maxlen = 0;
 
     public static void main(String[] args) {
         
-        String str = "asccccccssawcxcc";
-
-        maximumCount(str, 'c', 0);
-        System.out.println(maxlen);
+        String str = "asccccccssawcxcccccccccccc";
+        System.out.println(maximumCount(str, 'c', 0, 0, 0));
     }
 
-    static void maximumCount(String s, char c, int cnt){
-        if(s.length() == 0) {
-            maxlen = Math.max(maxlen, cnt);
-            return;
-        }
+    static int maximumCount(String s, char c, int cnt, int length, int maxLen){
+        if(s.length() == cnt) return maxLen;
 
-        if(s.charAt(0) == c){
-            maximumCount(s.substring(1), c, cnt+1);
-            return;
-        }
-
-        maxlen = Math.max(maxlen, cnt);
-        maximumCount(s.substring(1), c, 0);
-        
+        // 기존코드에서 필요이상의 loop가 도는 것 같아 재작성
+        maxLen = Math.max(length, maxLen);
+        if(s.charAt(cnt) == c) return maximumCount(s, c, cnt+1, length+1, maxLen);
+        return maximumCount(s, c, cnt+1, 0, maxLen);
     }
 
 }

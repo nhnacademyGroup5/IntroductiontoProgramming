@@ -35,7 +35,7 @@ public class Apartment {
         livingPerson[living++] = name;
     }
     
-    public String isempty(int idx){
+    public String get(int idx){
         if(idx > living){
             return null;
         }

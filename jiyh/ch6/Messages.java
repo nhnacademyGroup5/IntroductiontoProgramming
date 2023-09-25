@@ -31,7 +31,7 @@ public class Messages {
 
         sb.append(st.nextToken());
         while(st.hasMoreTokens()){
-            sb.append(" " + st.nextToken());
+            sb.append(" ").append(st.nextToken());
         }
 
         this.message = sb.toString();
