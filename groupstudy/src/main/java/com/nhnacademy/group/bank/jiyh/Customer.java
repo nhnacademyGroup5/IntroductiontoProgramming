@@ -1,7 +1,7 @@
 package com.nhnacademy.group.bank.jiyh;
 
 public class Customer {
-    
+
     private String account;
     private int balance;
     private String personalDate;
@@ -12,6 +12,7 @@ public class Customer {
         this.balance = balance;
         this.personalDate = personalDate;
     }
+
 
     public int getBalance() {
         return this.balance;

@@ -2,16 +2,20 @@ package com.nhnacademy.group.bank.jiyh;
 
 import java.time.LocalTime;
 
-public class Counter {
+public class Counter{
 
     private Employee employee;
+    private int counterNumber;
     private int visitCnt = 0;
     private int watingTime = 0;
-    private int processTime = 1;
+    private int processTime = 10;
 
-    Counter(Employee employee){
+    Counter(Employee employee, int counterNumber){
+        this.counterNumber= counterNumber;
         this.employee = employee;
     }
+
+
 
     public void process(Customer cus){
         try {
@@ -22,10 +26,11 @@ public class Counter {
             //직원의 당일 처리 숫자
             employee.setProcessCount(employee.getProcessCount() + 1);
 
-            Thread.sleep(processTime * 1000);
+
             System.out.println("---------------------------------------------");
-            System.out.println("창구 직원이 처리한 시간 : "+LocalTime.now());
+            System.out.println(counterNumber +"창구 직원이 처리 시작 시간 : "+LocalTime.now());
             System.out.println("ticket(번호, 받은시간) " + cus.getTicket());
+            Thread.sleep(processTime * 1000);
 
         } catch (InterruptedException e) {
             e.getStackTrace();

@@ -3,14 +3,14 @@ package com.nhnacademy.group.bank.jiyh;
 public class Banktest {
     
     public static void main(String[] args) {
-        
+
         Bank bank = new Bank();
-        bank.init();
 
-        while (!bank.iswaitingQueue()){
-            bank.finishProcess();
-        }
+        Thread cus = new Thread(new CusThread(bank));
+        Thread counter = new Thread(new CounterThread(bank));
 
-        System.out.println(bank.getWaittime());
+        cus.start();
+        counter.start();
+
     }
 }
