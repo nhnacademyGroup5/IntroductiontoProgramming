@@ -14,7 +14,7 @@ public class Word {
     }
 
     public Word(String num, String name, String means) {
-        this.num = num.substring(0, num.indexOf((".")));
+        this.num = num;
         this.name = name;
         this.means = means.substring(1);
     }
