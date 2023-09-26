@@ -1,4 +1,4 @@
-package bank;
+package com.nhnacademy.group.bank.jiyh;
 
 import java.time.LocalTime;
 

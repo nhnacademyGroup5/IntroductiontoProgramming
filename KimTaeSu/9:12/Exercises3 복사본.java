@@ -1,6 +1,7 @@
+package com.nhnacademy.group.KimTaeSu;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 
 
 // Exercise 3.1
