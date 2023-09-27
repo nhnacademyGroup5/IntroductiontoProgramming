@@ -1,4 +1,4 @@
-package jinwoo.unit11;
+package groupstudy.src.main.java.com.nhnacademy.group.unit11.jinwoo;
 
 public class TestListNode {
     public static void main(String[] args) {

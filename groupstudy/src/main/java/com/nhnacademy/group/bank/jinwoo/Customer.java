@@ -1,4 +1,4 @@
-package jinwoo.assignment.wating_simulator;
+package groupstudy.src.main.java.com.nhnacademy.group.bank.jinwoo;
 
 public class Customer {
     private Ticket ticket;
