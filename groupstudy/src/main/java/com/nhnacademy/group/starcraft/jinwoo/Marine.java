@@ -1,4 +1,4 @@
-package com.nhnacademy.group.starcraft;
+package com.nhnacademy.group.starcraft.jinwoo;
 
 public class Marine extends CloseRangeUnit implements Terran{
     public Marine() {

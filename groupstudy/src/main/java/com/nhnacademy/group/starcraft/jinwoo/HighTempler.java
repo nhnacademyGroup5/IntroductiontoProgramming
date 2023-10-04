@@ -1,4 +1,4 @@
-package com.nhnacademy.group.starcraft;
+package com.nhnacademy.group.starcraft.jinwoo;
 
 public class HighTempler extends CloseRangeUnit implements Protoss{
     public HighTempler() {

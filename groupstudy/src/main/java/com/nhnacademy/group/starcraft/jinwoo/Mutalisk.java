@@ -1,4 +1,4 @@
-package com.nhnacademy.group.starcraft;
+package com.nhnacademy.group.starcraft.jinwoo;
 
 public class Mutalisk extends AirUnit implements Zerg{
     public Mutalisk() {

@@ -1,4 +1,4 @@
-package com.nhnacademy.group.starcraft;
+package com.nhnacademy.group.starcraft.jinwoo;
 
 abstract class AirUnit extends Unit{
     @Override

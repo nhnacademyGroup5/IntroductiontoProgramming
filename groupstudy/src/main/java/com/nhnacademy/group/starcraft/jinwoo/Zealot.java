@@ -1,4 +1,4 @@
-package com.nhnacademy.group.starcraft;
+package com.nhnacademy.group.starcraft.jinwoo;
 
 public class Zealot extends CloseRangeUnit implements Protoss {
     public Zealot() {

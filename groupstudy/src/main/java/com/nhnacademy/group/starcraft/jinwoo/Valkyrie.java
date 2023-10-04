@@ -1,4 +1,4 @@
-package com.nhnacademy.group.starcraft;
+package com.nhnacademy.group.starcraft.jinwoo;
 
 public class Valkyrie extends AirUnit implements Terran{
     public Valkyrie() {
