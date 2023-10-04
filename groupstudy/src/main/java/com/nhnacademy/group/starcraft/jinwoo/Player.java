@@ -30,12 +30,11 @@ public class Player {
                     units.add(zerg[(int) (Math.random() * 5)]);
                 }
                 break;
+            default:
+                throw new IllegalArgumentException("올바른 값이 아닙니다.");
         }
     }
-    public void arrange(Unit change, int index){
-        if(change != null){
-            units.set(index, change);
-            units.removeIf(unit -> unit.def <= 0);
-        }
+    public void arrange(){
+        units.removeIf(unit -> unit.def <= 0);
     }
 }
