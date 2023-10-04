@@ -1,4 +1,4 @@
-package groupstudy.src.main.java.com.nhnacademy.group.bank.jinwoo;
+package com.nhnacademy.group.bank.jinwoo;
 
 public class Test {
     public static void main(String[] args){

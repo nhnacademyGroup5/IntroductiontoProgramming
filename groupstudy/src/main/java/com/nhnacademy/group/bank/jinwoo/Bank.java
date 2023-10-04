@@ -1,4 +1,4 @@
-package groupstudy.src.main.java.com.nhnacademy.group.bank.jinwoo;
+package com.nhnacademy.group.bank.jinwoo;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,35 +14,35 @@ public class Bank{
     public final Queue<Customer> waitingList = new LinkedList<>();
 
     public void createTicket(){
+        int time = (random.nextInt(10) + 1) * 1000;
         try {
-            int time = (random.nextInt(10) + 1) * 1000;
             Thread.sleep(time);
-            count++;
-            waitingNum++;
-            Customer customer = new Customer();
-            String parse = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-            customer.receiveTicket(new Ticket(count, parse));
-            System.out.println("(방문) " + customer.getTicket());
-            waitingList.offer(customer);
-            waitingTime += 5;
-            System.out.println("대기인원 : " + waitingNum + "명 | 예상 소요 시간 : " + waitingTime + "초");
         } catch (InterruptedException e){
             Thread.currentThread().interrupt();
         }
+        count++;
+        waitingNum++;
+        Customer customer = new Customer();
+        String parse = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+        customer.receiveTicket(new Ticket(count, parse));
+        System.out.println("(방문) " + customer.getTicket());
+        waitingList.offer(customer);
+        waitingTime += 5;
+        System.out.println("대기인원 : " + waitingNum + "명 | 예상 소요 시간 : " + waitingTime + "초");
     }
 
     public void process() {
-        try {
-            if(!waitingList.isEmpty()){
+        if(!waitingList.isEmpty()) {
+            try {
                 Thread.sleep(5000);
-                String parse = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-                System.out.println(parse + " " + count + "번 고객 업무 완료");
-                waitingNum--;
-                waitingTime-=5;
-                System.out.println("대기인원 : " + waitingNum + "명 | 예상 소요 시간 : " + waitingTime + "초");
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+            String parse = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+            System.out.println(parse + " " + count + "번 고객 업무 완료");
+            waitingNum--;
+            waitingTime -= 5;
+            System.out.println("대기인원 : " + waitingNum + "명 | 예상 소요 시간 : " + waitingTime + "초");
         }
     }
 }
