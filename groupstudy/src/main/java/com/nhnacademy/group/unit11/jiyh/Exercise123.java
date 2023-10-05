@@ -1,7 +1,7 @@
-package ch11;
+package com.nhnacademy.group.unit11.jiyh;
 
 
-public class Main {
+public class Exercise123 {
 
     public static void main(String[] args) {
         
@@ -14,9 +14,6 @@ public class Main {
         System.out.println(StringList.length(n));
         StringList.print(n);
 
-        // System.out.println("-----------------");
-        // n = StringList.modify(n, "2", "4");
-        // StringList.print(n);
 
         System.out.println("===============");
         n = StringList.insertBefore(n, "2", "4");
