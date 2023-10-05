@@ -1,12 +1,6 @@
 
-_
-/src/test/java/com/nhnacademy/group/AppTest.java,9/d/9d384614d1ed80fa06011fa0d43696011b0e1c34
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
-[
-+src/main/java/com/nhnacademy/group/App.java,b/7/b798860228a26e7bde5521c1c77298e3f4e942e3
-^
-.src/main/java/com/nhnacademy/group/bank/df.txt,6/4/64750d18a091d4067bdf6d943f053d596e01462c
 f
 6src/main/java/com/nhnacademy/group/bank/jiyh/Bank.java,7/b/7bfdb6e4ff1bcd0dfc4df1a75dacf691f5f51fd6
 i
