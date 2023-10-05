@@ -10,7 +10,7 @@ public class Dictionary {
     HashMap<String, String> dict = new HashMap<>();
 
     public Dictionary(String fileName) {
-        String path = "jinwoo/assignment/search_word/" + fileName + ".txt";
+        String path = "./jinwoo/assignment/search_word/" + fileName + ".txt";
         try (
             BufferedReader br = new BufferedReader(new FileReader(path));
         ) {
