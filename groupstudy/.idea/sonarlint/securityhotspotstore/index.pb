@@ -21,3 +21,5 @@ j
 :src/main/java/com/nhnacademy/group/bank/jiyh/Banktest.java,b/4/b46b23cd8da2b1cc3fc3351b77ec25f94dda519f
 k
 ;src/main/java/com/nhnacademy/group/bank/jiyh/CusThread.java,2/5/256a4fa1e81e538d0847a3fdd06ff4a1fbf099da
+j
+:src/main/java/com/nhnacademy/group/bank/jiyh/Employee.java,2/5/2556c43107698e1a4b11eb44e182e4148d69a161

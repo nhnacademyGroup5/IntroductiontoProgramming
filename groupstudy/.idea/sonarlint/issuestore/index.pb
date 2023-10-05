@@ -21,3 +21,5 @@ k
 ;src/main/java/com/nhnacademy/group/bank/jiyh/CusThread.java,2/5/256a4fa1e81e538d0847a3fdd06ff4a1fbf099da
 o
 ?src/main/java/com/nhnacademy/group/bank/jiyh/CounterThread.java,e/7/e7204bff5d78acecf46b9a8669ba834c7fe7b379
+j
+:src/main/java/com/nhnacademy/group/bank/jiyh/Employee.java,2/5/2556c43107698e1a4b11eb44e182e4148d69a161
