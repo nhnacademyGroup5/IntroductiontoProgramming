@@ -6,12 +6,17 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
 
-public class Bank{
+public class Bank implements Runnable{
     private int count=0;
     private int waitingTime=0;
     private int waitingNum=0;
     private final Random random = new Random();
     public final Queue<Customer> waitingList = new LinkedList<>();
+
+    @Override
+    public void run(){
+        createTicket();
+    }
 
     public void createTicket(){
         int time = (random.nextInt(10) + 1) * 1000;
