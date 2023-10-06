@@ -1,4 +1,4 @@
-package ch11;
+package com.nhnacademy.group.unit11.jiyh;
 
 public class StringList {
     
@@ -34,7 +34,7 @@ public class StringList {
 
     public static Node modify(Node node, String old, String ne){
 
-        if(isEmpty(node)) return node;
+        if(isEmpty(node)) return null;
 
         if(node.info.equals(old)) {
             node.info = ne;
@@ -97,7 +97,7 @@ public class StringList {
     }
 
     public static Node deleteDoubles(Node node){
-        if(isEmpty(node)) return node;
+        if(isEmpty(node)) return null;
 
         node.next = null;
         return node;

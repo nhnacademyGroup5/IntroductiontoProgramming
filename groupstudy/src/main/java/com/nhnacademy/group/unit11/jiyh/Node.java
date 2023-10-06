@@ -1,4 +1,4 @@
-package ch11;
+package com.nhnacademy.group.unit11.jiyh;
 
 public class Node {
     String info;
