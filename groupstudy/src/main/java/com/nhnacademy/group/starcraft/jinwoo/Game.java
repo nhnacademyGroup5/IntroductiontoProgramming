@@ -25,7 +25,7 @@ public class Game {
                 user = new Player(choose);
                 break;
             }
-            System.out.println("올바른 입력 값이 아닙니다.");
+            System.out.println("올바른 입력 값이 아닙니다. 다시 입력하세요.");
         }
     }
 
@@ -36,12 +36,7 @@ public class Game {
                 status();
                 System.out.print("공격을 수행할 아군 유닛과 공격할 적군 유닛을 선택하세요 : ");
                 String choose = br.readLine();
-                try {
-                    userTurn(choose);
-                } catch(IllegalArgumentException | NoSuchElementException e){
-                    System.out.println("올바른 입력 값이 아닙니다.");
-                    start();
-                }
+                userTurn(choose);
                 comTurn();
             }
         } catch(IOException error){
@@ -71,12 +66,22 @@ public class Game {
             int getAttNum = Integer.parseInt(st.nextToken());
             Unit attUnit = user.getUnits().get(attNum);
             Unit getAttUnit = computer.getUnits().get(getAttNum);
-            attUnit.attack(getAttUnit);
+            try {
+                if (attUnit.attack(getAttUnit) == null) {
+                    throw new IllegalArgumentException("공격할 수 없는 대상 입니다. 다시 지정 하세요.");
+                }
+                attUnit.attack(getAttUnit);
+            } catch(IllegalArgumentException e){
+                System.out.println(e.getMessage());
+                start();
+            }
             computer.arrange();
         } catch(IndexOutOfBoundsException e){
             System.out.println("졌습니다!!");
+        } catch(IllegalArgumentException | NoSuchElementException e){
+            System.out.println("올바른 입력 값이 아닙니다. 다시 입력하세요.");
+            start();
         }
-
     }
 
     public void comTurn(){

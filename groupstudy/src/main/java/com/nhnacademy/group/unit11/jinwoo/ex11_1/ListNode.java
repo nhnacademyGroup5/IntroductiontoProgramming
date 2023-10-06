@@ -1,4 +1,4 @@
-package groupstudy.src.main.java.com.nhnacademy.group.unit11.jinwoo;
+package com.nhnacademy.group.unit11.jinwoo.ex11_1;
 
 public class ListNode {
     String info;
