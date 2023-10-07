@@ -1,4 +1,4 @@
-package groupstudy.src.main.java.com.nhnacademy.group.bank.jiyh;
+package com.nhnacademy.group.bank.jiyh;
 
 import java.time.LocalTime;
 import java.util.LinkedList;
