@@ -20,24 +20,23 @@ public class BigNumber {
     }
 
     public BigNumber(String input) {
-        if (input.length() <= 9) {
-            list.add(Integer.parseInt(input));
-        } else {
-            for (int i = 1; i <= input.length() / 9; i++) {
-                list.add(Integer.parseInt(input.substring(input.length() - 9 * i)));
-            }
-            list.add(Integer.parseInt(input.substring(0, input.length() % 9)));
+        String tmp = input;
+        while(tmp.length() > 9){
+            list.add(Integer.parseInt(tmp.substring(tmp.length() - 9)));
+            tmp = tmp.substring(0,tmp.length() - 9);
         }
+        list.add(Integer.parseInt(tmp));
     }
 
-    public void arrange(){
+    public void arrange() {
         for (int i = 0; i < length(); i++) {
             if(list.get(i) >= 1_000_000_000){
                 if(i == length() - 1) {
-                    list.add(list.get(i) / 1_000_000_000);
+                    list.add(1);
+                } else {
+                    list.set(i + 1, list.get(i + 1) + 1);
                 }
-                list.set(i + 1, list.get(i + 1) + list.get(i) / 1_000_000_000);
-                list.set(i, list.get(i) % 1_000_000_000);
+                list.set(i, list.get(i) - 1_000_000_000);
             }
         }
     }
@@ -48,21 +47,35 @@ public class BigNumber {
         while(count < Math.max(length(), num.length())){
             if(count < minDigit){
                 list.set(count, list.get(count) + num.getList().get(count));
-            }
-            if(minDigit == length() && count >= minDigit){
-                list.add(num.getList().get(count));
+            } else {
+                if(minDigit == length()){
+                    list.add(num.getList().get(count));
+                }
             }
             count++;
         }
         arrange();
     }
 
-//    public BigNumber difference(BigNumber num){
-//        if(this.length() < num.length()) return new BigNumber("0");
-//        for (int i = 0; i < num.length(); i++) {
-//
-//        }
-//    }
+    public BigNumber difference(BigNumber num){
+        if(length() < num.length()){
+            System.out.println("차이가 음수 입니다.");
+            return new BigNumber("0");
+        }
+        BigNumber tmp = this;
+        for (int i = 0; i < num.length(); i++) {
+            int diff = tmp.getList().get(i) - num.getList().get(i);
+            if(diff < 0){
+                diff += 1_000_000_000;
+                tmp.getList().set(i + 1, tmp.getList().get(i + 1) - 1);
+            }
+            tmp.getList().set(i, diff);
+        }
+        while(tmp.getList().get(tmp.length() -1 ) == 0){
+            tmp.getList().remove(tmp.length()-1);
+        }
+        return tmp;
+    }
 
     public boolean bigNumberEquals(BigNumber num){
         return list.equals(num.getList());
@@ -72,17 +85,7 @@ public class BigNumber {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int i = list.size() - 1; i >= 0 ; i--) {
-            if (i == list.size() - 1) {
-                sb.append(list.get(i));
-                continue;
-            }
-            if(list.get(i) == 0) sb.append("000000000");
-            if((int) Math.log10(list.get(i)) + 1 < 9){
-                int count = 8 - (int) Math.log10(list.get(i));
-                sb.append("0".repeat(Math.max(0, count)));
-            } else{
-                sb.append(list.get(i));
-            }
+            sb.append(i == list.size() - 1 ?  list.get(i) : String.format("%09d", list.get(i)));
         }
         return "[BigNumber] " + sb;
     }
