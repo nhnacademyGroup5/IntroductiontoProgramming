@@ -94,12 +94,12 @@ public class ListOfPersons {
         return sum;
     }
 
-    public int averageOfAge(){
+    public double averageOfAge(){
         int sum = 0;
         for (Person person : personList) {
             sum += person.getAge();
         }
-        return sum / personList.size();
+        return (double) sum / personList.size();
     }
 
     public static void main(String[] args) {
