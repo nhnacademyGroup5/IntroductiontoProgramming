@@ -2,6 +2,7 @@ package com.nhnacademy.group.solution.ex11_8;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  * Ex 11.8
@@ -9,7 +10,7 @@ import java.util.List;
  * (BigInteger 기능을 하는 Class 만들어 보기)
  */
 public class BigNumber {
-    private final List<Integer> list = new ArrayList<>();
+    private List<Integer> list = new ArrayList<>();
 
     public List<Integer> getList() {
         return list;
@@ -28,17 +29,22 @@ public class BigNumber {
         list.add(Integer.parseInt(tmp));
     }
 
+    public BigNumber(List<Integer> list){
+        this.list = list;
+    }
+
     public void arrange() {
-        for (int i = 0; i < length(); i++) {
-            if(list.get(i) >= 1_000_000_000){
-                if(i == length() - 1) {
+        IntStream.range(0, length())
+            .filter(i -> list.get(i) >= 1_000_000_000)
+            .forEach(i -> {
+                if (i == length() - 1) {
                     list.add(1);
                 } else {
                     list.set(i + 1, list.get(i + 1) + 1);
                 }
                 list.set(i, list.get(i) - 1_000_000_000);
-            }
-        }
+                }
+            );
     }
 
     public void add(BigNumber num){
@@ -62,19 +68,19 @@ public class BigNumber {
             System.out.println("차이가 음수 입니다.");
             return new BigNumber("0");
         }
-        BigNumber tmp = this;
-        for (int i = 0; i < num.length(); i++) {
-            int diff = tmp.getList().get(i) - num.getList().get(i);
+        List<Integer> tmp = new ArrayList<>();
+        IntStream.range(0, num.length()).forEach(i -> {
+            int diff = list.get(i) - num.getList().get(i);
             if(diff < 0){
                 diff += 1_000_000_000;
-                tmp.getList().set(i + 1, tmp.getList().get(i + 1) - 1);
+                tmp.add(i + 1, list.get(i + 1) - 1);
             }
-            tmp.getList().set(i, diff);
+            tmp.add(i, diff);
+        });
+        while(tmp.get(tmp.size() -1 ) == 0){
+        tmp.remove(tmp.size()-1);
         }
-        while(tmp.getList().get(tmp.length() -1 ) == 0){
-            tmp.getList().remove(tmp.length()-1);
-        }
-        return tmp;
+        return new BigNumber(tmp);
     }
 
     public boolean bigNumberEquals(BigNumber num){
