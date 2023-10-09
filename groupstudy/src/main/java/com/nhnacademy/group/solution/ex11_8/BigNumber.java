@@ -2,6 +2,7 @@ package com.nhnacademy.group.solution.ex11_8;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.stream.IntStream;
 
 /**
@@ -10,6 +11,7 @@ import java.util.stream.IntStream;
  * (BigInteger 기능을 하는 Class 만들어 보기)
  */
 public class BigNumber {
+    private final int BILLION = 1_000_000_000;
     private List<Integer> list = new ArrayList<>();
 
     public List<Integer> getList() {
@@ -21,28 +23,44 @@ public class BigNumber {
     }
 
     public BigNumber(String input) {
-        String tmp = input;
-        while(tmp.length() > 9){
-            list.add(Integer.parseInt(tmp.substring(tmp.length() - 9)));
-            tmp = tmp.substring(0,tmp.length() - 9);
+        try {
+            if (!Pattern.matches("^[0-9]*$", input)) {
+                throw new IllegalArgumentException("BigNumber : 올바른 입력이 아닙니다.");
+            }
+            String tmp = input;
+            while(tmp.length() > 9){
+                list.add(Integer.parseInt(tmp.substring(tmp.length() - 9)));
+                tmp = tmp.substring(0,tmp.length() - 9);
+            }
+            list.add(Integer.parseInt(tmp));
+        } catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
         }
-        list.add(Integer.parseInt(tmp));
     }
 
     public BigNumber(List<Integer> list){
-        this.list = list;
+        try {
+            for (int index : list) {
+                if (index >= BILLION) {
+                    throw new IllegalArgumentException("BigNumber : 올바른 입력이 아닙니다. (10억 이하의 값을 요소에 추가하세요.");
+                }
+            }
+            this.list = list;
+        } catch(IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public void arrange() {
         IntStream.range(0, length())
-            .filter(i -> list.get(i) >= 1_000_000_000)
+            .filter(i -> list.get(i) >= BILLION)
             .forEach(i -> {
                 if (i == length() - 1) {
                     list.add(1);
                 } else {
                     list.set(i + 1, list.get(i + 1) + 1);
                 }
-                list.set(i, list.get(i) - 1_000_000_000);
+                list.set(i, list.get(i) - BILLION);
                 }
             );
     }
@@ -72,7 +90,7 @@ public class BigNumber {
         IntStream.range(0, num.length()).forEach(i -> {
             int diff = list.get(i) - num.getList().get(i);
             if(diff < 0){
-                diff += 1_000_000_000;
+                diff += BILLION;
                 tmp.add(i + 1, list.get(i + 1) - 1);
             }
             tmp.add(i, diff);
