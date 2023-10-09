@@ -24,7 +24,7 @@ public class BigNumber {
 
     public BigNumber(String input) {
         try {
-            if (!Pattern.matches("^[0-9]*$", input)) {
+            if (!Pattern.matches("^\\d*$", input)) {
                 throw new IllegalArgumentException("BigNumber : 올바른 입력이 아닙니다.");
             }
             String tmp = input;
